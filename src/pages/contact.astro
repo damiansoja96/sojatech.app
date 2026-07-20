@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contact - Damian Soja" description="Get in touch with Damian Soja, Senior Data Engineer based in London.">
+  <Header />
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p>Open to data engineering opportunities in hedge funds and investment firms.</p>
+
+    <div class="links">
+      <a href="https://github.com/dsoja" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/damiansoja" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:damian@sojatech.app">Email</a>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .links a {
+    border: 1px solid var(--border);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+  }
+
+  .links a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+</style>

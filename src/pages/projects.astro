@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<BaseLayout title="Projects - Damian Soja" description="Data engineering projects including real-time pipelines, OLAP analytics, and cloud infrastructure.">
+  <Header />
+
+  <main class="container">
+    <h1>Projects</h1>
+    <p class="intro">A selection of data engineering work - from real-time streaming pipelines to financial data platforms.</p>
+
+    <div class="projects-list">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          tech={project.tech}
+          url={project.url}
+        />
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .intro {
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+</style>

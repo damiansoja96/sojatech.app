@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Experience - Damian Soja" description="Professional experience as a Senior Data Engineer in finance.">
+  <Header />
+
+  <main class="container">
+    <h1>Experience</h1>
+
+    <section class="job">
+      <h3>Senior Data Engineer</h3>
+      <p class="meta">Finance - London - May 2026 - Present</p>
+      <ul>
+        <li>Owned the transformation layer for financial royalties data standardisation</li>
+        <li>Built ingestion, validation, reporting, and LLM-assisted mapping systems in production</li>
+        <li>Designed and deployed real-time streaming pipelines (Kafka -> ClickHouse)</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <h3>Data Engineer</h3>
+      <p class="meta">Finance - London - 2023 - May 2026</p>
+      <ul>
+        <li>Developed data pipelines using Python, SQL, and AWS cloud infrastructure</li>
+        <li>Built dashboards and analytics in Tableau and Grafana</li>
+        <li>Containerised workloads with Docker and Docker Compose</li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .job {
+    margin-bottom: 2.5rem;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .job ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .job li {
+    color: var(--muted);
+    padding: 0.2rem 0;
+  }
+
+  .job li::before {
+    content: "> ";
+    color: var(--accent);
+  }
+</style>

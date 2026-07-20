@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { skills } from '../data/skills';
+---
+
+<BaseLayout title="Damian Soja - Senior Data Engineer" description="Senior Data Engineer specialising in real-time analytics, financial data pipelines, and cloud infrastructure.">
+  <Header />
+
+  <main class="container">
+    <section class="hero">
+      <h1>Damian Soja</h1>
+      <p class="subtitle">Senior Data Engineer - London, UK</p>
+      <p class="bio">
+        I build production-grade data pipelines for financial data - from real-time
+        streaming ingestion to OLAP analytics and dashboards. Currently focused on
+        real-time crypto market data and hedge fund analytics.
+      </p>
+      <div class="cta">
+        <a href="/projects">View Projects</a>
+        <a href="/contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        {Object.entries(skills).map(([category, items]) => (
+          <div class="skill-category">
+            <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+            <ul>
+              {items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .bio {
+    color: var(--muted);
+    max-width: 600px;
+  }
+
+  .cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta a {
+    border: 1px solid var(--border);
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+
+  .cta a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-category h3 {
+    color: var(--accent);
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-category ul {
+    list-style: none;
+  }
+
+  .skill-category li {
+    color: var(--muted);
+    padding: 0.15rem 0;
+  }
+</style>
